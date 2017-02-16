@@ -1,0 +1,461 @@
+
+<% include partials/header%>
+
+      <form method=POST action="/orderpage">
+          
+   <div class="container myfont1side3 ">
+       <div class="col-sm-12 middle">
+           <br></br>
+           <h2>Your order has not been placed</h2>
+            <h4>Please review the details of your order below and click on "Place My Order" to complete your order.</h4>
+          
+          
+            <br></br>
+       </div>
+
+
+ 
+       <div class="col-sm-12 myright">
+                          <input type="submit" border="0" alt="Place Order" class="" value="Place Order">
+                            
+                        </div>
+   	 <div class=" container  ">
+   	 
+   	  
+   	   
+   	    <div class="col-sm-12"></div>
+   	 
+   	     <div class="col-sm-10 mystatics ">
+   	         <div class="col-sm-12 middle">
+   	            <br></br><h2>My Cart <a href="/cart" class="btn btn-xs btn-danger "><span class=mywhite>EDIT</span></a></h2> 
+   	         </div>
+   	         
+   	        <% for (var i=0; i< summary.length ; i++){ %>
+   	         
+   	         <div class="col-sm-12 ">
+   	             <h5><%=i+1%>. <%=summary[i]["PRODNAME"]%></h5>
+   	         </div>
+   	         <div class="col-sm-12">
+   	             <img src=<%=summary[i]["SMALL"]%>>
+   	         </div>
+   	         <div class="col-sm-12">
+   	             <br>
+   	         </div>
+   	         
+   	          <%}%>
+   	          
+   	           <div class="col-sm-12 myleft">
+   	        <br>
+   	         </div>
+  
+   	         <!-- <div class="col-sm-12 myleft">-->
+   	         <!--<div class="col-sm-6">-->
+   	         <!--    <h5>Subtotal :</h5>-->
+   	         <!--</div>    -->
+   	         
+   	         <!-- <div class="col-sm-6">-->
+   	         <!--    <h5>$<%=totalorder["SUBTOTAL"]%></h5>-->
+   	         <!--</div>-->
+   	         <!-- </div>-->
+   	         
+   	         <!-- <div class="col-sm-12 myleft">-->
+   	         <!-- <div class="col-sm-6">-->
+   	         <!--     <h5>Service Charge :</h5>-->
+   	         <!--</div>-->
+   	         
+   	         <!-- <div class="col-sm-6">-->
+   	         <!--      <h5>$<%=totalorder["FLORISTONESERVICECHARGE"]%></h5>-->
+   	         <!--</div>-->
+   	         <!-- </div>-->
+   	          
+   	         <!-- <div class="col-sm-12 myleft">-->
+   	         <!--<div class="col-sm-6">-->
+   	         <!--       <h5>Tax :</h5>-->
+   	         <!--</div>-->
+   	         
+   	         <!--<div class="col-sm-6">-->
+   	         <!--     <h5>$<%=totalorder["FLORITONETAX"]%></h5>-->
+   	         <!--</div>-->
+   	         <!-- </div>-->
+   	         
+   	         <!-- <div class="col-sm-12 myleft">-->
+   	         <!-- <div class="col-sm-6">-->
+   	         <!--       <h5>Order Total :</h5>-->
+   	         <!--</div>-->
+   	        
+   	         <!--<div class="col-sm-6">-->
+   	         <!--      <h5>$<%=totalorder["ORDERTOTAL"]%></h5>-->
+   	         <!--</div>-->
+   	         <!--</div>-->
+     	     </div>
+   	     <div class="col-sm-12"> <br></br></div>
+   	       
+   	     <div class="col-sm-5 mystatics">
+   	           <div class="col-sm-12 middle">
+   	            <h2>Billing Details &nbsp<a onclick="goBack()" class="btn btn-xs btn-danger"><span class=mywhite>EDIT</span></a></h2>
+    	         </div>
+    	         
+    	         
+    	         <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>NAME :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["FIRSTNAME"]%>&nbsp<%=billdetails["LASTNAME"]%></h5>
+   	         </div>
+   	          </div>
+    	         
+    	         
+    	         
+    	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>ADDRESS :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["ADDRESS"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	             <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>ADDRESS2 :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["ADDRESS2"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	                <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>CITY :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["CITY"]%></h5>
+   	         </div>
+   	          </div>
+   	                <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>STATE :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["STATE"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	                <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>COUNTRY :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["COUNTRY"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          
+   	                <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>ZIPCODE :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["ZIPCODE"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	                  <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>PHONE :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["PHONE"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	                  <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>EMAIL :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["EMAIL"]%></h5>
+   	         </div>
+   	          </div>
+   	          </div>
+   	          
+   	          
+   	            
+   	          
+   	          
+   	          
+   	         
+   	          
+   	          
+   	          
+   	          
+   	          
+   	 
+   	      <div class="col-sm-5 mystatics">
+   	          
+   	          
+   	          <div class="col-sm-12 middle">
+   	          <h2>Payment  Details &nbsp<a onclick="goBack()" class="btn btn-xs btn-danger"><span class=mywhite>EDIT</span></a></h2>
+    	      </div>
+    	         
+    	         <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Card Type :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["CARDTYPE"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>NUMBER :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["CARDNUMBER"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>EXPIRY :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["CARDMONTH"]%>/<%=billdetails["CARDYEAR"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>CVV2 :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=billdetails["CARDSECCODE"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+    	         
+   	     </div>
+   	     
+   	     <div class="col-sm-12"> <br></br></div>
+   	     
+   	     
+   	        <% for (var i=0; i< summary.length ; i++){ %>
+   	     
+   	      <div class="col-sm-10 mystatics">
+   	          <div class="col-sm-12 middle">
+   	            <h2>Delivery Details &nbsp<a onclick="goBack(goBack())" class="btn btn-xs btn-danger"><span class=mywhite>EDIT</span></a></h2>
+   	            <h4><%=summary[i]["PRODNAME"]%></h4>
+   	            
+   	         </div>
+   	          
+   	           
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Name :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["NAME"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Address :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["ADDRESS"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Address 2 :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["ADDRESS2"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>City :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["CITY"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>State :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["STATE"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Zip Code :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["ZIPCODE"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>country :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["COUNTRY"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Phone:</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["PHONE"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Delivery Date:</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["DELIVERYDATE"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Card Message :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["CARDMESSAGE"]%></h5>
+   	         </div>
+   	          </div>
+   	          <div class="col-sm-12 myleft">
+   	         <div class="col-sm-6">
+   	                <h5>Delivery Instructions :</h5>
+   	         </div>
+   	         
+   	         <div class="col-sm-6">
+   	              <h5><%=summary[i]["DELIVERYINSTRUCTIONS"]%></h5>
+   	         </div>
+   	          </div>
+   	          
+  	          
+   	          
+   	     </div>
+   	     <div class="col-sm-12"> <br></br></div>
+   	        <%}%>
+   	        
+   	        
+ 
+ 
+ 
+ 
+ 
+   	 
+   	 
+   	  
+  
+		</div>
+		
+	
+    </div>
+        
+                  <div class="col-sm-12 myright">
+                          <input type="submit" border="0" alt="Place Order" class="" value="Place Order">
+                            
+                        </div>
+                        
+                        
+                       <% for (var i=0; i<summary.length; i++){ %>
+                        
+                          <input  type="hidden" name="summary[<%=i%>][CODE]"  value=<%=summary[i]["CODE"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][SMALL]"  value=<%=summary[i]["SMALL"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][PRICE]"  value=<%=summary[i]["PRICE"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][PRODNAME]"  value=<%=summary[i]["PRODNAME"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][DELIVERYINSTRUCTIONS]"  value=<%=summary[i]["DELIVERYINSTRUCTIONS"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][INSTITUTION]"  value=<%=summary[i]["INSTITUTION"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][ADDRESS]"  value=<%=summary[i]["ADDRESS"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][ADDRESS2]"  value=<%=summary[i]["ADDRESS2"]%> >
+   	     	              	<input  type="hidden" name="summary[<%=i%>][CITY]"  value=<%=summary[i]["CITY"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][STATE]"  value=<%=summary[i]["STATE"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][COUNTRY]"  value=<%=summary[i]["COUNTRY"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][ZIPCODE]"  value=<%=summary[i]["ZIPCODE"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][PHONE]"  value=<%=summary[i]["PHONE"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][NAME]"  value=<%=summary[i]["NAME"]%> >
+   	     	               <input  type="hidden" name="summary[<%=i%>][CARDMESSAGE]"  value=<%=summary[i]["CARDMESSAGE"]%> >
+   	     	               <input  type="hidden" name="summary[<%=i%>][DELIVERYDATE]"  value=<%=summary[i]["DELIVERYDATE"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][IP]"  value=<%=summary[i]["IP"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][DIMENSION]"  value=<%=summary[i]["DIMENSION"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][ALLOWSUBSTITUTIONS]"  value=<%=summary[i]["ALLOWSUBSTITUTIONS"]%> >
+   	     	                <input  type="hidden" name="summary[<%=i%>][GIFTCOST]"  value=<%=summary[i]["GIFTCOST"]%> >
+   	     	               <%}%>
+   	     	               
+   	     	               <%var firstname =[];var lastname =[];var address =[];var address2 =[];var city =[]%>
+                               <%firstname=billdetails["FIRSTNAME"].split(' ').join('_');%>
+                               <%lastname=billdetails["LASTNAME"].split(' ').join('_');%>
+                               <%address=billdetails["ADDRESS"].split(' ').join('_');%>
+                                <%address2=billdetails["ADDRESS2"].split(' ').join('_');%>
+                               <%city=billdetails["CITY"].split(' ').join('_');%>
+   	     	               
+   	     	               <input  type="hidden" name="billdetails[FIRSTNAME]"  value=<%=firstname%> >
+   	     	               <input  type="hidden" name="billdetails[LASTNAME]"  value=<%=lastname%> >
+                           <input  type="hidden" name="billdetails[ADDRESS]"  value=<%=address%> >
+                           <input  type="hidden" name="billdetails[ADDRESS2]"  value=<%=address2%> >
+                           <input  type="hidden" name="billdetails[CITY]"  value=<%=city%> >
+                           <input  type="hidden" name="billdetails[STATE]"  value=<%=billdetails["STATE"]%> >
+                           <input  type="hidden" name="billdetails[COUNTRY]"  value=<%=billdetails["COUNTRY"]%> >
+                           <input  type="hidden" name="billdetails[ZIPCODE]"  value=<%=billdetails["ZIPCODE"]%> >
+                           <input  type="hidden" name="billdetails[EMAIL]"  value=<%=billdetails["EMAIL"]%> >
+                           <input  type="hidden" name="billdetails[PHONE]"  value=<%=billdetails["PHONE"]%> >
+                           <input  type="hidden" name="billdetails[CARDTYPE]"  value=<%=billdetails["CARDTYPE"]%> >
+                           <input  type="hidden" name="billdetails[CARDNUMBER]"  value=<%=billdetails["CARDNUMBER"]%> >
+                           <input  type="hidden" name="billdetails[CARDMONTH]"  value=<%=billdetails["CARDMONTH"]%> >
+                           <input  type="hidden" name="billdetails[CARDYEAR]"  value=<%=billdetails["CARDYEAR"]%> >
+                           <input  type="hidden" name="billdetails[CARDSECCODE]"  value=<%=billdetails["CARDSECCODE"]%> >
+                           
+                            <input  type="hidden" name="totalorder[ORDERTOTAL]"  value=<%=totalorder["ORDERTOTAL"]%> >
+                             <input  type="hidden" name="totalorder[SUBTOTAL]"  value=<%=totalorder["SUBTOTAL"]%> >
+                              <input  type="hidden" name="totalorder[FLORITONETAX]"  value=<%=totalorder["FLORITONETAX"]%> >
+                               <input  type="hidden" name="totalorder[FLORISTONESERVICECHARGE]"  value=<%=totalorder["FLORISTONESERVICECHARGE"]%> >
+                           
+                           
+                           
+                           
+  </form>
+
+
+
+		
+<% include partials/footer%>

@@ -1,0 +1,112 @@
+
+<% include partials/header%>
+
+   <div class="men">
+   	 <div class="container myfont1side3">
+   	     <div class=container>
+   	         <h5><a href="/flowershop/ao/1"> Back to Flower Shop</a></h5>
+   	     </div>
+   	  <!--<div class="grid_1">-->
+	   	 <!-- <h1>LOG IN</h1>-->
+	   	 <!-- <p><h5> <h5></p>-->
+      <!--</div>-->
+      
+	  <div class="clearfix"> </div>
+	 </div>
+	 <div class="contact_form row">
+	 	<h2> Please Sign up below</h2>
+	    <form method="post" action="/signup">
+	               <div class=col-xs-2> </div>
+					<div class="but__center mylogin col-xs-8 mycentre" class="col-sm-6 to">
+                        <div class="mynewright col-sm-6">
+                            <div>
+                            <label>First Name : </label>
+                         </div>
+                        <br>
+                        <div>
+                            <label>Last Name : </label>
+                         </div>
+                        <br>
+                        <div>
+                            <label>Email : </label>
+                         </div>
+                        <br>
+                        <div>
+                            <label>Password:</label>
+                         </div>
+                         <br>
+                        <div >
+                            <label>Confirm Password:</label>
+                        </div>
+                        <br>
+                        <div >
+                            <label>Phone:</label>
+                        </div>
+                        
+                        </div>
+                        <div class=" myleft col-sm-6">
+                            <div>
+                               <input  type="text" class="text" name=firstname required>
+                           
+                            </div>
+                             <br>
+                            <div>
+                               <input  type="text" class="text" name=lastname required>
+                           
+                            </div>
+                            <br>
+                           
+                            <div>
+                               <input  type="email" class="text" name=username required>
+                           
+                            </div>
+                            <br>
+                            <div>
+                                <input id=first type="password" class="text"name=password  required> 
+                            </div>
+                            	</br>
+                            	<div>
+                            	    <input id=second type="password" class="text"name=password2  required>
+                            	</div>
+                            	</br>
+                            	<div>
+                            	    <input  type="number" class="text"name=phone  required>
+                            	</div>
+                            	 
+                            
+                        </div>
+                        
+					 	</div>
+				
+	                <div class="clearfix"></div>
+	                <script>
+	                var firstInput = document.getElementById("first").value;
+                    var secondInput = document.getElementById("second").value;
+                    
+                    if (firstInput==secondInput ){
+                        
+                        document.getElementById("result").innerhtml= "<input type='submit' value='Sign Up &gt;&gt;'>"
+                    }else {
+                          document.getElementById("result").innerhtml= "<h3>Passwords do not match</h3>"
+                    }
+                    
+                    </script>
+	                <div id=result class="but__center"><input type="submit" value="Sign Up &gt;&gt;"></div>
+        </form>
+     </div>
+     
+      <div class= container row>
+                          
+                          <div class=middle>
+                                <p><h5> Already Signed Up? <a href="/login">Log In here<a></h5></p>
+                               
+                            </div>
+                            
+      </div>
+    </div>
+   </div>
+  <!-- <div class="map">-->
+		<!--   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>-->
+		<!--</div>-->
+		
+  <% include partials/footer%>

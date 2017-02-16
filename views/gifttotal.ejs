@@ -1,0 +1,31 @@
+<div class="mybigborder col-sm-6">
+	
+	<h4>Single GiftBasket Item Cost</h4>
+<h4>Subtotal : &nbsp$<%=itemtotal["PRODUCTS"][0]["BASEPRICE"]%></h4>
+		                            	
+<h4>Shipping Total : &nbsp$<%=(itemtotal["SHIPPINGTOTAL"]+ 5).toFixed(2)%></h4>
+	<input  type="hidden" name="summary[<%=index%>][DELIVERYDATE]"  value=<%=date%> >
+	<input  type="hidden" name="summary[<%=index%>][GIFTCOST]"  value=<%=itemtotal["ORDERTOTAL"]%> >
+
+<h4>Item Total : &nbsp$<%=itemtotal["ORDERTOTAL"]%></h4>
+<h4>Delivery Date : &nbsp<%=itemtotal["PRODUCTS"][0]["DELIVERYDATE"]%></h4>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

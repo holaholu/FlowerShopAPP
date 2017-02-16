@@ -1,0 +1,163 @@
+
+<% include partials/header%>
+                                     
+   <div class="men">
+   	 <div class="container">
+   	     <div>
+   	         
+   	     </div>
+   	     <br>
+   	     </br>
+   	   <div class= "container row">
+   	       
+   	       
+   	       
+                       	        <div class="col-sm-2 myfont1side"> <h5><a  onclick="goBack()"> Go Back</a></h5>
+                       	          </div>
+                       	       
+                       	       <div class="col-sm-8 middle myfont1side" >
+                       	           <h2><strong>My Cart</strong></h2>      
+                       	       </div>
+                       	       
+                       	        <div class=col-sm-2> 
+                       	          </div>
+                       	       
+                       	          <br></br>
+   	       
+                       	      <br>
+                       	      <div class=" col-sm-12 myright mywhite ">
+                       	          <a class="btn btn-xs btn-info myleft myfont1side " href= "/flowershop/ao/1">Continue Shopping</a></div>
+                       	           <div class=" col-sm-6 myright">
+                       	          
+                       	          </div>
+                       	          <br></br>
+   	                             <br></br>
+   	                               <br></br>
+   	      
+                       	    <div class=mystatics>
+                       	    <div class="col-sm-7 middle myfont1side">
+                       	        <br></br>
+                       	       <h3>PRODUCT(s) ADDED</h3>
+                       	        <br></br>
+                       	    </div>
+                       	    
+                       	    <% var subtotal = 0%>
+                       	    <% var count = 0%>
+                       	    <% var checkoutlist = []%>
+                       	     
+                       	 <% productstore.forEach(function(i){ %>
+                       	     
+                       	    <div class=container>
+                       	       
+                       	        <div class="col-sm-7 thumbnail myfont1side mystatics">
+                       	        <img  src="<%=i["SMALL"]%>" class="img-responsive" title="" /><br></br>
+                       	         <h5><%=i["NAME"]%> &nbsp(Product Code-<%=i["CODE"]%>)</h5>
+                       	          <%count++%>
+                       	         
+                       	      <!-- List of Each Item-->
+                  	        </div>
+                  	        
+                  	        
+                  	      
+                  	         
+                  	          <form   class="col-sm-2 middle myremove" action="/session/null/<%=i["CODE"]%>/remove" method=POST>
+                       	      <button class="glyphicon glyphicon-remove btn btn-xs btn-danger" aria-hidden="true" ></button>
+                       	        
+                       	   </form> 
+                  	          
+                  	       <div class="col-sm-2  myamount myfont1side mywhite"> 
+                  	        <strong><h3>Price - $<%=i["PRICE"].toFixed(2)%></h3></strong>
+                  	        <%subtotal+=i["PRICE"]%>
+                  	         <%checkoutlist.push(i) %>
+                 	        </div>
+                       	        
+                       
+                       	    </div>
+                       	    
+                       	        
+                       	     
+                 	       
+                 	        
+                       	     
+                       	   <% if(productstore.length==count) { %>
+                                    
+                                
+                           	       <div class=" col-sm-12  mynewright myfont1side myamount  ">
+                             	           <div >
+                            	               <h3>Subtotal:&nbsp$<%=subtotal.toFixed(2)%></h3>
+                            	               <!--<h4>Service Charge:&nbsp$12.99</h4>-->
+                            	               
+                            	               <!--<h4>Total:&nbsp$<%=(subtotal+12.99).toFixed(2)%></h4>-->
+                            	               <br></br>
+                            	           </div>
+                              	           
+                              	           
+                             	       </div>
+                             	      
+                             	       
+                             <%  }else { %>
+                               
+                               <% }%>
+                       	     
+                       	   
+                       	    <% });%>
+                       	       
+                       	     
+                       	   <div class=" col-sm-12 myright">
+                       	       <%var giftbasket =[];var flowershop =[]%>
+                             	          
+                             	       <form action="/delivery" method=POST>
+                             	           
+                             	          <%for( var i=0; i < productstore.length; i++){ %>
+                             	             
+                             	               <%var store =[];%>
+                                           <%store[i]=productstore[i]["NAME"].split(' ').join('_');%>
+                             	             
+                             	            <input id="obj" type="hidden" name="product[<%=i%>][CODE]"  value=<%=productstore[i]["CODE"]%> >     
+                             	            <input id="obj" type="hidden" name="product[<%=i%>][NAME]"   value=<%=store[i]%> >  
+                             	            <input id="obj" type="hidden" name="product[<%=i%>][PRICE]"  value=<%=productstore[i]["PRICE"]%> > 
+                             	            <input id="obj" type="hidden" name="product[<%=i%>][SMALL]"  value=<%=productstore[i]["SMALL"]%> > 
+                             	            <input id="obj" type="hidden" name="product[<%=i%>][DIMENSION]"  value=<%=productstore[i]["DIMENSION"]%> >
+                             	          
+                             	           <% if(productstore[i]["DIMENSION"]==''){%>
+                             	           <%giftbasket.push(productstore[i]);} else {flowershop.push(productstore[i])}%>
+                             	           
+                             	           
+                             	           
+                             	           
+                             	          <% }%>
+                             	           
+                             	         <% if ( giftbasket.length >2){ %>
+                             	          
+                             	              <h4>Maximum allowable GiftBasket items in Cart for each order is two... ( Please remove some items to enable Checkout )</h4>
+                             	          
+                             	          <% }else if ( flowershop.length >2){%>
+                             	          <h4>Maximum allowable FlowerShop items in Cart for each order is two... ( Please remove some items to enable Checkout )</h4>
+                             	          
+                             	      <%    }else { %>
+                             	          
+                       	            <button type=submmit class="btn btn-lg btn-danger myfont1side"  ><span class=mywhite>Check Out</span></button>
+                       	         
+                             	        <%  }%>
+                             	       </form>
+                             	        </div>   
+                       	  
+                       	         
+                      
+   	        </div>
+   	       
+   	       
+   	   </div>
+   	     
+   	 
+   	 
+		</div>
+		
+	
+    </div>
+   </div>
+
+
+
+		
+<% include partials/footer%>

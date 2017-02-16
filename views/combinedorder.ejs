@@ -1,0 +1,315 @@
+
+<% include partials/header%>
+   
+
+   <div class="men">
+   	 <div class="container myfont1side3">
+       <div class="col-sm-12 middle">
+           <br></br>
+           <h2>Congratulations!</h2>
+            <h4> Your orders have been placed and your purchased products will soon be prepared for delivery.</h4>
+            
+           <br></br>
+       </div>
+       
+       
+     
+   	 <div class=" container  ">
+   	 
+   	  
+   	   
+   	    
+   	 
+   	     <div class="col-sm-12  ">
+   	         <h4>Find your Order Details below:</h4>
+   	              <br></br>
+   	         </div>
+   	         
+   	         
+   	         <div class="col-sm-10 mystatics myordermargin"> 
+   	         
+   	         <div class=col-sm-6>
+   	             <div class=col-sm-12><h3><br></br>FlowerShop Order</h3>
+   	             <h5> Your Order Number is :&nbsp<span class="myred"><%=orderdetails["ORDERNO"]%></span>.</h5><h6>(Please keep if needed for future correspondence)</h6>
+   	             <br></br>
+   	             </div>
+   	             
+   	             <% for (var i=0; i<orderdetails["ITEMS"].length ; i++){ %>
+   	         
+   	          <div class=col-sm-12>
+   	              <h5><%=i+1 %>.&nbspPRODUCT NAME : &nbsp<%=orderdetails["ITEMS"][i]["NAME"]%></h5>
+   	          </div>
+   	          <div class="col-sm-12 myfinaldetail">
+   	              <img src=<%=orderdetails["ITEMS"][i]["THUMBNAIL"]%>>
+   	           </div>
+   	           
+   	           <div class=col-sm-12>
+   	              <h5>PRODUCT CODE : &nbsp<%=orderdetails["ITEMS"][i]["CODE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CARD MESSAGE : &nbsp<%=orderdetails["ITEMS"][i]["CARDMSG"]%></h5>
+   	          </div>
+   	         
+   	          <div class=col-sm-12>
+   	              <h5>DELIVERY DATE : &nbsp<%=orderdetails["ITEMS"][i]["DELIVERYDATE"]%></h5>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h4>RECIPIENT DETAILS</h4>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>NAME : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["NAME"]%></h5>
+   	          </div>
+   	          
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["ADDRESS1"]%></h5>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS2 : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["ADDRESS2"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CITY : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["CITY"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>STATE : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["STATE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>COUNTRY : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["COUNTRY"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>ZIPCODE : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["ZIPCODE"]%></h5>
+   	          </div>
+   	          <div class="col-sm-12 myfinaldetail">
+   	              <h5>PHONE : &nbsp<%=orderdetails["ITEMS"][i]["RECIPIENT"]["PHONE"]%></h5>
+   	          </div>
+   	        
+   	          <%}%>
+   	             
+   	             
+   	         </div>
+   	         
+   	         
+   	         
+   	         <div class=col-sm-6>
+   	             <div class=col-sm-12>
+   	              <h4><br></br>BILLING INFORMATION</h4>
+   	              
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CUSTOMER NAME: &nbsp<%=orderdetails["CUSTOMER"]["NAME"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS : &nbsp<%=orderdetails["CUSTOMER"]["ADDRESS1"]%></h5>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS2 : &nbsp<%=orderdetails["CUSTOMER"]["ADDRESS2"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>EMAIL : &nbsp<%=orderdetails["CUSTOMER"]["EMAIL"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>PHONE : &nbsp<%=orderdetails["CUSTOMER"]["PHONE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>ZIPCODE : &nbsp<%=orderdetails["CUSTOMER"]["ZIPCODE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CITY : &nbsp<%=orderdetails["CUSTOMER"]["CITY"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>STATE: &nbsp<%=orderdetails["CUSTOMER"]["STATE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>COUNTRY : &nbsp<%=orderdetails["CUSTOMER"]["COUNTRY"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	             
+   	          </div>
+   	          <div class=col-sm-12>
+   	             
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h4>PAYMENT DETAILS</h4>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>SUBTOTAL : &nbsp$<%=(orderdetails["SUBTOTAL"]).toFixed(2)%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>SERVICE CHARGE : &nbsp$<%=(orderdetails["SERVICECHARGE"]).toFixed(2)%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>TOTAL CHARGE : &nbsp$<%=orderdetails["TOTAL"].toFixed(2)%><br></br></h5>
+   	          </div>
+   	             
+   	         </div>
+   	         
+  	 </div>
+  	
+  	 
+  	 <div class="col-sm-10 mystatics myordermargin"> 
+   	         
+   	         <div class=col-sm-6>
+   	             <div class=col-sm-12><h3><br></br>GiftBasket Order</h3>
+   	             <h5> Your Order Number is :&nbsp<span class="myred"><%=giftorder["ORDERNO"]%></span>.</h5><h6>(Please keep for future correspondence)</h6>
+   	             <br></br>
+   	             </div>
+   	             
+   	             <% for (var i=0; i<giftbasket.length ; i++){ %>
+   	         
+   	          <div class=col-sm-12>
+   	              <h5><%=i+1 %>.&nbspPRODUCT NAME : &nbsp<%=giftbasket[i]["PRODNAME"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <img src=<%=giftbasket[i]["SMALL"]%>>
+   	           </div>
+   	           <div class=col-sm-12>
+   	              <h5>PRODUCT CODE : &nbsp<%=giftbasket[i]["CODE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CARD MESSAGE : &nbsp<%=giftbasket[i]["CARDMESSAGE"]%></h5>
+   	          </div>
+   	         
+   	          <div class=col-sm-12>
+   	              <h5>DELIVERY DATE : &nbsp</h5>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h4>RECIPIENT DETAILS</h4>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>NAME : &nbsp<%=giftbasket[i]["NAME"]%>%></h5>
+   	          </div>
+   	          
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS : &nbsp<%=giftbasket[i]["ADDRESS"]%>%></h5>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS2 : &nbsp<%=giftbasket[i]["ADDRESS2"]%>%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CITY : &nbsp<%=giftbasket[i]["CITY"]%>%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>STATE : &nbsp<%=giftbasket[i]["STATE"]%>%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>COUNTRY : &nbsp<%=giftbasket[i]["COUNTRY"]%>%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>ZIPCODE : &nbsp<%=giftbasket[i]["ZIPCODE"]%>%></h5>
+   	          </div>
+   	          <div class="col-sm-12 myfinaldetail">
+   	              <h5>PHONE : &nbsp<%=giftbasket[i]["PHONE"]%>%></h5>
+   	          </div>
+   	         
+   	       
+   	             <%} %>
+   	             
+   	         </div>
+   	         
+   	         
+   	         
+   	         <div class=col-sm-6>
+   	             <div class=col-sm-12>
+   	              <h4><br></br>BILLING INFORMATION</h4>
+   	              
+   	          </div>
+   	         <div class=col-sm-12>
+   	              <h5>CUSTOMER NAME: &nbsp<%=billdetails["FIRSTNAME"]+"&nbsp"+billdetails["LASTNAME"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS : &nbsp<%=billdetails["ADDRESS"]%></h5>
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h5>ADDRESS2 : &nbsp<%=billdetails["ADDRESS2"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>EMAIL : &nbsp<%=billdetails["EMAIL"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>PHONE : &nbsp<%=billdetails["PHONE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>ZIPCODE : &nbsp<%=billdetails["ZIPCODE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>CITY : &nbsp<%=billdetails["CITY"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>STATE: &nbsp<%=billdetails["STATE"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>COUNTRY : &nbsp<%=billdetails["COUNTRY"]%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	             
+   	          </div>
+   	          <div class=col-sm-12>
+   	             
+   	          </div>
+   	          
+   	          <div class=col-sm-12>
+   	              <h4>PAYMENT DETAILS</h4>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>SUBTOTAL : &nbsp$<%=(giftorder["SUBTOTAL"]-5).toFixed(2)%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>SHIPPING CHARGE : &nbsp$<%=(giftorder["SHIPPINGTOTAL"]+5).toFixed(2)%></h5>
+   	          </div>
+   	          <div class=col-sm-12>
+   	              <h5>TOTAL CHARGE : &nbsp$<%=giftorder["ORDERTOTAL"].toFixed(2)%><br></br></h5>
+   	          </div>
+   	             
+   	         </div>
+   	         
+  	 </div>
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+   	  
+  
+		</div>
+		
+	
+    </div>
+   </div>
+
+
+
+		
+<% include partials/footer%>

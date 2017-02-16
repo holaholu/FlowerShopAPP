@@ -1,0 +1,265 @@
+
+<% include partials/header%>
+
+
+
+
+
+   <div class="men">
+    <div class=" container">
+    	<div class=row >
+    	<div class="col-sm-1 sidebar_men mysidemenu myfont1side">
+    		<br></br>
+    	  <h3><span class="mycat">OCCASSIONS</span></h3>
+    	  <ul class="product-categories ">
+    	  	<li class="cat-item cat-item-42"><a href="/flowershop/ao/1">Every Day</a></li>
+			<li class="cat-item cat-item-60"><a href="/flowershop/bd/1">Birthday</a></li>
+			<li class="cat-item cat-item-63"><a href="/flowershop/an/1">Anniversary</a></li>
+			<li class="cat-item cat-item-54"><a href="/flowershop/lr/1">Love & Romance</a></li>
+			<li class="cat-item cat-item-55"><a href="/flowershop/gw/1">Get Well</a></li>
+			<li class="cat-item cat-item-64"><a href="/flowershop/nb/1">New Baby</a></li>
+			<li class="cat-item cat-item-61"><a href="/flowershop/ty/1">Thank You</a></li>
+			<li class="cat-item cat-item-56"><a href="/flowershop/sy/1">Funerals</a></li>
+			<li class="cat-item cat-item-56"><a href="/flowershop/all/1">All Flowers</a></li>
+			
+		
+		 </ul>
+		 <br></br>
+		 <h3><span class="mycat">SEASONALS</span></h3>
+    	  <ul class="product-categories color">
+    	  	<li class="cat-item cat-item-42"><a href="/flowershop/vd/1">Valentines Day</a></li>
+			<li class="cat-item cat-item-60"><a href="/flowershop/cm/1">Christmas</a></li>
+			<li class="cat-item cat-item-63"><a href="/flowershop/ea/1">Easter</a></li>
+			<li class="cat-item cat-item-54"><a href="/flowershop/md/1">Mothers Day</a></li>
+		
+		  </ul>
+		  
+		  <h3><span class="mycat">GIFT BASKETS</span></h3>
+    	  <ul class="product-categories color">
+    	  	<li class="cat-item cat-item-42"><a href="/giftbaskets/fb/1">Fruit baskets</a></li>
+			<li class="cat-item cat-item-60"><a href="/giftbaskets/gb/1">Gourmet Baskets</a></li>
+			<li class="cat-item cat-item-63"><a href="/giftbaskets/nb/1">Baby Items</a></li>
+			<li class="cat-item cat-item-54"><a href="/giftbaskets/spa/1">Spa Items</a></li>
+			<li class="cat-item cat-item-55"><a href="/giftbaskets/cat/1">Coffee and Tea</a></li>
+			<li class="cat-item cat-item-64"><a href="/giftbaskets/ecc/1">Eli’s Cheesecake</a></li>
+			<li class="cat-item cat-item-61"><a href="/giftbaskets/ccm/1">Cookies & Chocolates </a></li>
+			<li class="cat-item cat-item-56"><a href="/giftbaskets/wg/1">All Gift Items</a></li>
+		
+		 </ul>
+		  
+		  <h3><span class="mycat">SPECIALS</span></h3>
+    	  <ul class="product-categories color">
+    	  	<li class="cat-item cat-item-42"><a href="/flowershop/c/1">Centerpieces</a></li>
+			<li class="cat-item cat-item-60"><a href="/flowershop/o/1">1Sided Specials</a></li>
+			<li class="cat-item cat-item-63"><a href="/flowershop/n/1">Novelty Specials</a></li>
+			<li class="cat-item cat-item-54"><a href="/flowershop/v/1">Vased Specials</a></li>
+			<li class="cat-item cat-item-55"><a href="/flowershop/r/1">Roses</a></li>
+				<li class="cat-item cat-item-55"><a href="/flowershop/x/1">Fruit baskets</a></li>
+					<li class="cat-item cat-item-55"><a href="/flowershop/p/1">Plants</a></li>
+						<li class="cat-item cat-item-55"><a href="/flowershop/b/1">Balloons</a></li>
+		  </ul>
+		  
+		  <h3><span class="mycat">By Price</span></h3>
+    	  <ul class="product-categories">
+    	  	<li class="cat-item cat-item-42"><a href="/flowershop/u60/1">Under $60</a></li>
+			<li class="cat-item cat-item-60"><a href="/flowershop/60t80/1">$60 - $80</a></li>
+			<li class="cat-item cat-item-63"><a href="/flowershop/80t100/1">$80 - $100</a></li>
+			<li class="cat-item cat-item-54"><a href="/flowershop/a100/1">Above $100</a></li>
+		
+		  </ul>
+		  	<br></br>	<br>
+		</div>
+		
+		
+		
+    	<div class="col-md-8">
+    		<div class=" dreamcrub">
+			   	<ul class="breadcrumbs">
+                    <li class="home">
+                       <a href="/" title="Go to Home Page">Home</a>&nbsp;
+                       <span>&gt;</span>
+                    </li>
+    <li class="home ">&nbsp;
+                       <span class=myfont1side2><%=selection%></span>
+                    </li>
+                </ul>
+                <!--<ul class="previous">-->
+                <!--	<li><a href="index.html">Back to Previous Page</a></li>-->
+                <!--</ul>-->
+                <div class="clearfix"></div>
+			   </div>
+			   <div class="mens-toolbar">
+                 
+               	   
+		            	
+		            	
+		            	<!--display differrent sorts except for gift baskets--> 
+		            	
+		            
+		            	
+		            	<div class="sort">
+		            	<div class="sort-by">
+		            		
+		            			<%if (type =="flowershop"){ %>
+		               <label>Sort By</label>
+		            
+		            <form  method=POST action=/<%=type%>/<%=category%>/<%=startnumber%>>
+		            		
+		            	<% if (sort=="no") { %>
+		            	<select name="sortby" id= "mypage">
+		            		<option  value="no" selected="selected">
+		                    Position                </option>
+		                          
+		                            <option   value="az">
+		                    Name                </option>
+		                            <option value="pa">
+		                    Price                </option>
+		            </select>
+		            
+		             <% } else if (sort=="az") {  %>
+		             
+		             <select name="sortby" id= "mypage">
+		            		<option  value="no" >
+		                    Position                </option>
+		                          
+		                            <option   value="az" selected="selected">
+		                    Name                </option>
+		                            <option value="pa">
+		                    Price                </option>
+		            </select>
+		             <% }else { %>
+		             <select name="sortby" id= "mypage">
+		            		<option  value="no" >
+		                    Position                </option>
+		                          
+		                            <option   value="az">
+		                    Name                </option>
+		                            <option value="pa" selected="selected">
+		                    Price                </option>
+		            </select>
+		            <% } %>
+		            
+		            <button  class= "btn btn-xs btn-info " id= "mypage">Go</a>
+		            	
+		            </form>
+		           
+                 
+		            	
+		            	
+		            	<% }else {} %>
+		            	
+		               </div>
+		            
+		             
+		             
+		             <!--End of sorts --> 
+		             
+		            
+		            
+		            
+		            
+    		     </div>
+								    		  
+    		     
+    	        <ul class="women_pagenation dc_paginationA dc_paginationA06 ">
+				
+			     
+			     <li><a href="#" class="previous">Page : </a></li>
+			     
+			     
+			     
+			     <% for (var i=1; i <= numberofpages;i++){ %>
+			       
+			      <% if ( i==1) { %>
+			            <% startnumber =  1 ; %>
+			          <%    pagelink="/page/"+type+"/"+category+"/"+startnumber+"/"+sort %>
+			          <% firstpagelink= "/"+type+"/"+category+"/"+startnumber%>
+			        <li class="  <%= (url== pagelink||url== firstpagelink) ?'active':'' %> "  id="mypage">
+								
+								
+	                              				        
+			       		
+			       		<a  href="/page/<%=type%>/<%=category%>/<%=startnumber%>/<%=sort%>" > <%=i%> </a>
+			       		
+							       			
+							
+									
+			       	</li>
+			     <%   } else { %>
+			          <% startnumber = ((i-1) * 12) + 1 ; %>
+			          <% var   pagelink="/page/"+type+"/"+category+"/"+startnumber+"/"+sort %>
+			        <% firstpagelink= "/"+type+"/"+category+"/"+startnumber%>
+			        <li class="  <%= (url== pagelink||url== firstpagelink) ?'active':'' %> "  id="mypage">
+			       		
+			       		<a   href="/page/<%=type%>/<%=category%>/<%=startnumber%>/<%=sort%>" > <%=i%> </a>
+			       	</li>
+			     	
+			     <% } %>
+			     
+			     
+			       
+			       	
+			   
+			        
+			       
+			     
+			    <% }%>
+			     
+		  	    </ul>
+		  	 
+		  	    
+		  	 
+		  	    
+                <div class="clearfix"></div>		
+		        </div>
+    		<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+					
+					<div class="pages">   
+        	 
+       	   </div>
+					<div class=" clearfix"></div>
+					<div class="row">
+					
+							
+							<ul >
+						<%product.forEach(function(item){ %>
+						   <li class="col-xs-4" >
+							<a class="cbp-vm-image" href="/details/<%=category%>/<%=type%>/<%=item["CODE"]%>">
+							 <div class="view view-first">
+					   		  <div class="inner_content clearfix">
+								<div class="product_image">
+									<div class="mask1"><img src="<%=item["SMALL"]%>" alt="image" class="img-responsive zoom-img"></div>
+									<div class="mask">
+			                       		<div class="info">Quick View</div>
+					                 </div>
+					                 <div class="product_container">
+									   <h4><%=item["NAME"]%></h4>
+									   <h5><p>PRODUCT CODE:&nbsp<%=item["CODE"]%></p> </h5>
+									   <div class="price">$<%=item["PRICE"]%></div>
+									 </div>		
+								  </div>
+			                     </div>
+		                      </div>
+		                    </a>
+						</li>
+						   
+						   
+						   
+					   <%	}); %>
+						
+					 
+						
+					</ul>	
+					
+						
+					</div>
+				
+				</div>
+				<script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
+                <script src="js/classie.js" type="text/javascript"></script>
+    	</div>
+    </div>
+    </div>
+   </div>
+   
+   <% include partials/footer%>

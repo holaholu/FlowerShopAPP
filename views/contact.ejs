@@ -1,0 +1,56 @@
+
+<% include partials/header%>
+
+
+   <div class="men">
+   	 <div class="container">
+   	  <div class="grid_1">
+	   	  <h1>Contact Info</h1>
+	   	  <p><h5> We are friendly and available to communicate via phone or email. Get in touch with us anytime and we will happilly respond to your inquires.<h5></p>
+      </div>
+      <div class="grid_4">
+      <div class="grid_2 preffix_1">
+	      <ul class="iphone">
+	      	<i class="phone"> </i>
+	      	<li class="phone_desc">Florist Line : +1 877 399 2882  </li>
+	      	<li class="phone_desc">9:00AM to 5:00PM	Saturday </li>
+	      	<div class="clearfix"> </div>
+	      </ul>
+	      
+	  </div>
+	  <div class="grid_3">
+	      
+	      <ul class="iphone">
+	      
+	        <li class="phone_desc">Customer Service Hours 
+	        </li><li>9:00AM to 8:00PM-Monday to Friday (Eastern Time)
+									 
+									 </li>
+	      	<div class="clearfix"> </div>
+	      </ul>
+	  </div>
+	  <div class="clearfix"> </div>
+	 </div>
+	 <div class="contact_form">
+	 	<h2>Feedback</h2>
+	    <form method="post" action="/contact">
+					<div class="col-md-6 to">
+                     	<input type="text" class="text" name=name placeholder="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required>
+					 	<input type="email" class="text" name=email placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
+					 	<input type="text" class="text"name=subject placeholder="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}"required >
+					     <input type="number" class="text"name=phone placeholder="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required>
+					</div>
+					<div class="col-md-6 text">
+	                   <textarea name=message placeholder="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required></textarea>
+	                </div>
+	                <div class="clearfix"></div>
+	                <div class="but__center"><input type="submit" value="Send message &gt;&gt;"></div>
+        </form>
+     </div>
+    </div>
+   </div>
+  <!-- <div class="map">-->
+		<!--   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>-->
+		<!--</div>-->
+		
+  <% include partials/footer%>

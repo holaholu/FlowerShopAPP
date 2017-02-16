@@ -1,0 +1,131 @@
+
+<% include partials/header%>
+
+
+
+   <div class="men">
+   	<div class="container">
+      <div class="col-md-9 single_top">
+      	<div class="single_left">
+      	  <div class="labout span_1_of_a1">
+			<ul id="etalage" >
+							<li>
+								<a href="#">
+									<!--<img class="etalage_thumb_image" src="" class="img-responsive" />-->
+									<img class="etalage_source_image" src="<%=product["LARGE"]%>" class="img-responsive" title="" />
+								</a>
+							</li>
+							
+			 </ul>
+		     <div class="clearfix"></div>	
+	    </div>
+		<div class="cont1 span_2_of_a1">
+				<h1><%=product["NAME"]%></h1>
+				<p class="availability">Availability: <span class="color">Ready for Order</span></p>
+			    <div class="price_single">
+				  <span class="reducedfrom">$<%=Math.floor(product["PRICE"]*1.15)%></span>
+				  <span class="actual">$<%=product["PRICE"]%></span>
+				</div>
+				<h2 class="quick">Description:</h2>
+				<p class="quick_desc"> <%=product["DESCRIPTION"]%></p>
+			  <!--  <div class="wish-list">-->
+				 <!--	<ul>-->
+				 <!--		<li class="wish"><a href="#">Add to Wishlist</a></li>-->
+				 <!--	    <li class="compare"><a href="#">Add to Compare</a></li>-->
+				 <!--	</ul>-->
+				 <!--</div>-->
+				<% if(product["DIMENSION"]==''){}else{%>
+				<ul class="size">
+					<h3>Dimension</h3>
+					<li><a ><%=product["DIMENSION"]%></a></li>
+					
+				</ul>
+				<% } %>
+				<form method=POST action="/session/<%=type%>/<%=product["CODE"]%>/add">
+			              
+		   		    <div class="clearfix"></div>
+		   		    <br></br>
+	  		    
+	   		   
+	      			
+	      	    <button  title="Online Reservation" class="btn btn-primary btn-normal btn-inline " target="_self" type="submit" >Add to Cart</button>
+	      	    </form>
+			   
+			</div>
+		    <div class="clearfix"> </div>
+		</div>
+        <div class="sap_tabs">	
+				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+						  <ul class="resp-tabs-list">
+						  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>PRODUCT CODE :&nbsp<%=product["CODE"]%></span></li>
+							  <!--<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span> SERVICE TYPE:&nbsp<%=product["SERVICE"]%></span></li>-->
+							  <!--<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Reviews</span></li>-->
+							  <!--<div class="clear"></div>-->
+						  </ul>				  	 
+							
+					      </div>
+					 </div>	
+		</div>
+		<div class="col-md-3">
+			
+			<%if ( relproduct1||relproduct2||relproduct3){ %>
+			
+	      <h3 class="m_1">Related Products</h3>
+	      
+	      <%}%>
+	      
+	      
+	      <%if ( relproduct1){ %>
+	      <ul class="product">
+	      	<li class="product_img"><img src="<%=relproduct1["SMALL"]%>" class="img-responsive" alt=""/></li>
+	      	<li class="product_desc">
+	      		<h4><a href="/details/<%=category%>/<%=type%>/<%=relproduct1["CODE"]%>"><%=relproduct1["NAME"]%></a></h4>
+	      		<p class="single_price"><%=relproduct1["PRICE"]%></p>
+	      		 <a href="#" class="link-cart">Add to Cart</a>
+	        </li>
+	      	<div class="clearfix"> </div>
+	      </ul>
+	      <%} else {} %>
+	      
+	      <%if ( relproduct2){ %>
+	      <ul class="product">
+	      	<li class="product_img"><img src="<%=relproduct2["SMALL"]%>" class="img-responsive" alt=""/></li>
+	      	<li class="product_desc">
+	      		<h4><a href="/details/<%=category%>/<%=type%>/<%=relproduct2["CODE"]%>"><%=relproduct2["NAME"]%></a></h4>
+	      		<p class="single_price"><%=relproduct2["PRICE"]%></p>
+	      		
+	      	    <a href="#" class="link-cart">Add to Cart</a>
+	        </li>
+	      	<div class="clearfix"> </div>
+	      </ul>
+	        <%} else {} %>
+	        
+	        <%if ( relproduct3){ %>
+	        
+	      <ul class="product">
+	      	<li class="product_img"><img src="<%=relproduct3["SMALL"]%>" class="img-responsive" alt=""/></li>
+	      	<li class="product_desc">
+	      		<h4><a href="/details/<%=category%>/<%=type%>/<%=relproduct3["CODE"]%>"><%=relproduct3["NAME"]%></a></h4>
+	      		<p class="single_price"><%=relproduct3["PRICE"]%></p>
+	      		
+	      	    <a href="#" class="link-cart">Add to Cart</a>
+	        </li>
+	      	<div class="clearfix"> </div>
+	      </ul>
+	      
+	        <%} else {} %>
+	      
+	      
+	     
+	      
+	      
+        </div>
+     <div class="clearfix"> </div>
+	</div>
+	
+	
+    </div>
+   </div>
+   
+   
+   <% include partials/footer%>

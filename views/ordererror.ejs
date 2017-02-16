@@ -1,0 +1,39 @@
+
+<% include partials/header%>
+
+
+   <div class="men">
+   	 <div class="container">
+   	     
+   	     <div>
+   	         <h5><a  onclick="goBack()" class="btn btn-xm btn-danger"> BACK</a></h5>
+   	     </div>
+   	     <br>
+   	     </br>
+   	  
+   	  
+   	  <div class="container row">
+   	      
+   	          <h3>You order has the errors below. Please click the back button  to make the required corrections.</h3>
+   	          <br></br>
+   	      
+   	     <div class= "col-sm-12 myred mystatics">
+   	          <br></br>
+   	     <% for (var i=0; i<error.length; i++){%>
+   	      
+   	        
+   	       <h4><%=i+1 +". "+ error[i]%>.</h4>
+   	      
+   	     <% }%>
+   	      <br></br>
+   	     </div>
+   	  </div>
+		
+	
+    </div>
+   </div>
+
+
+
+		
+<% include partials/footer%>
