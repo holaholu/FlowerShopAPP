@@ -23,7 +23,7 @@ var kyraUser         = require("./models/user");
 
 
 app.use(require("express-session")({
-    secret: "This APP is the best",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false
 }));
